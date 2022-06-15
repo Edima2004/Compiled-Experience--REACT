@@ -10,10 +10,11 @@ const Cart = () => {
 				<p>
 					<span className={`cartmsg-${color}`}>{icon}</span> {message}
 				</p>
-			</div>
-			<button className="close-sidemenu cart-exit-btn" onClick={closeCartMsg}>
+            <button className="close-sidemenu cart-exit-btn" onClick={closeCartMsg}>
 				<FaTimes />
 			</button>
+			</div>
+			
 		</div>
 	);
 };

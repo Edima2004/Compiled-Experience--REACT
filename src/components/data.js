@@ -53,12 +53,12 @@ export const NavData = [
 export const social = [
 	{
 		id: 1,
-		url: "htttps://www.facebook.com/edima-marvelous",
+		url: "https://www.facebook.com/edima-marvelous",
 		icon: <FaFacebookF />,
 	},
 	{
 		id: 2,
-		url: "htttps://www.twitter.com/Edima_vthompson?t=kZdKnlHu-CcK6VNheEPvpw&s=09",
+		url: "https://www.twitter.com/Edima_vthompson?t=kZdKnlHu-CcK6VNheEPvpw&s=09",
 		icon: <FaTwitter />,
 	},
 	{

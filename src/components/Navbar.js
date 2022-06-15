@@ -1,7 +1,7 @@
 import { NavData } from "./data";
 import { FaBars, FaTrash } from "react-icons/fa";
 import { TiShoppingCart } from "react-icons/ti";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useGlobalContext } from "./context";
 
 const Navbar = () => {
