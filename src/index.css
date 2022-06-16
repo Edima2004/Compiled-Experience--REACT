@@ -143,7 +143,7 @@ div .navbar {
 
 @media screen and (max-width:600px) {
   .all-cart {
-    padding-right: 80%;
+    padding-right: 70%;
   }
 }
 
@@ -217,8 +217,8 @@ div .navbar {
 .cart-exit-btn {
   position: absolute;
   font-size: 1rem;
-  top: 15%;
-  right: 9%;
+  top: 14%;
+  right: 6%;
 
 }
 
