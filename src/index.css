@@ -143,7 +143,7 @@ div .navbar {
 
 @media screen and (max-width:600px) {
   .all-cart {
-    padding-right: 60%;
+    padding-right: 80%;
   }
 }
 
@@ -626,7 +626,6 @@ button {
   border: solid thin var(--clr-gold);
   border-radius: 100px;
   padding: .5em;
-  margin-inline: 1.5rem;
   font-size: small;
   text-transform: capitalize;
   cursor: pointer;
@@ -635,12 +634,6 @@ button {
 .btn-menu:hover {
   background: var(--clr-grey-8);
   border: transparent;
-}
-
-@media (max-width:500px) {
-  .btn-menu {
-    margin-right: .5rem;
-  }
 }
 
 .about {
@@ -664,11 +657,13 @@ button {
 }
 
 .top-menu {
+  margin: 0 auto;
   width: 100%;
-  text-align: center;
-  padding: 1rem;
-
-
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  margin-bottom: 1rem;
+  justify-content:space-evenly ;
 }
 
 /* footer */
