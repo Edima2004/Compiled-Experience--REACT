@@ -1,7 +1,7 @@
 import React from "react";
 import Cocktail from "./Cocktails";
-import Loading from "../Loading";
-import { useGlobalContext } from "../context";
+import Loading from "./Loading";
+import { useGlobalContext } from "../../context";
 
 const CocktailList = () => {
 	const { cocktails, loading } = useGlobalContext();

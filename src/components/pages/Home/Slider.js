@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
-import { reviews } from "../data";
+import { reviews } from "../../data";
 
 const Slider = () => {
 	const [index, setIndex] = useState(0);

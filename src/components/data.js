@@ -44,7 +44,7 @@ export const reviews = [
 // 2/4
 export const NavData = [
 	{ id: 1, name: "Home", link: "/", icon: <FaHome /> },
-	{ id: 2, name: "Food", link: "/Food", icon: <MdOutlineFoodBank /> },
+	{ id: 2, name: "Menu", link: "/Food", icon: <MdOutlineFoodBank /> },
 	{ id: 3, name: "Cocktails", link: "/Cocktails", icon: <FaCocktail /> },
 	{ id: 4, name: "About Us", link: "/About", icon: <IoIosPeople /> },
 ];
@@ -63,12 +63,12 @@ export const social = [
 	},
 	{
 		id: 3,
-		url: "htttps://www.instagram.com/vthompson_edima",
+		url: "https://instagram.com/vthompson_edima/",
 		icon: <FaInstagram />,
 	},
 	{
 		id: 4,
-		url: "htttps://www.linkedin.com/in/edima-vincent-thompson-187844224",
+		url: "https://linkedin.com/in/edima-vincent-thompson-187844224",
 		icon: <TiSocialLinkedin />,
 	},
 ];

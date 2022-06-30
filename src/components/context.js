@@ -20,18 +20,32 @@ const getLocalStorage = () => {
 		return [];
 	}
 };
+//?json server 2 cart
+const getLocalStorageCart = () => {
+	let item = localStorage.getItem("cart");
+	if (item) {
+		return JSON.parse(localStorage.getItem("cart"));
+	} else {
+		return [];
+	}
+};
 
 const AppProvider = ({ children }) => {
-	//?Cart--UseReducer
+	//? Cart Item
+	const [cartItem, setCartItem] = useState(getLocalStorageCart([]));
+
+	//?CartMsg--UseReducer
 	const initialState = {
-		cart: [],
+		cart: cartItem,
 		quantity: getLocalStorage(),
 		message: "",
 		icon: "",
 		color: "",
+		total: 0,
 	};
 	const [state, dispatch] = useReducer(reducer, initialState);
 	const [cartMsg, setCartMsg] = useState(false);
+	const [changeBtn, setChangeBtn] = useState(false);
 
 	useEffect(() => {
 		const timeCartMsg = setTimeout(() => {
@@ -49,25 +63,55 @@ const AppProvider = ({ children }) => {
 
 	const clear_cart = (e) => {
 		e.preventDefault();
+		setChangeBtn(false);
+		setCartItem([]);
 		setCartMsg(true);
 		dispatch({ type: "CLEAR_ALL" });
 	};
-
-	const add_to_cart = (e) => {
-		e.preventDefault();
-		setCartMsg(true);
-		dispatch({ type: "ADD_TO_CART" });
-	};
-
 	const remove_from_cart = (id) => {
+		//const newItem= cartItem.map((item) => item.id !== id);
+		// setCartItem(newItem)
+		dispatch({ type: "DELETE_ITEM", payload: id, });
+	};
+	const increase = (id, price) => {
+		dispatch({ type: "INCREASE", payload: id, payload2: price });
+	};
+	const reduce = (id, price) => {
+		dispatch({ type: "REDUCE", payload: id, payload2: price });
+	};
+	//Get Total
+	useEffect(() => {
+		dispatch({ type: "GET_TOTALS" });
+	}, [state.cart]);
+
+	const add_to_cart = (id, img, price, title) => {
+		const newItem = {
+			id: id,
+			image: img,
+			price: price,
+			title: title,
+			amount: 1,
+		};
+
+		setChangeBtn(true);
 		setCartMsg(true);
-		dispatch({ type: "DELETE_ITEM", payload: id });
+		setCartItem([...cartItem, newItem]);
+		dispatch({ type: "ADD_TO_CART" });
+		if (cartItem.some((item1) => item1.title === title)) {
+			setCartItem([...cartItem]);
+			console.log(cartItem);
+			dispatch({ type: "ITEM_PRESENT" });
+		}
 	};
 
 	//? json server2
 	useEffect(() => {
 		localStorage.setItem("quantity", JSON.stringify(state.quantity));
 	}, [state]);
+
+	useEffect(() => {
+		localStorage.setItem("cart", JSON.stringify(cartItem));
+	}, [cartItem]);
 
 	//?Cocktails
 	const [loading, setLoading] = useState(true);
@@ -87,8 +131,8 @@ const AppProvider = ({ children }) => {
 						item;
 					return {
 						id: idDrink,
-						name: strDrink,
-						img: strDrinkThumb,
+						title: strDrink,
+						image: strDrinkThumb,
 						info: strAlcoholic,
 						glass: strGlass,
 					};
@@ -188,6 +232,10 @@ const AppProvider = ({ children }) => {
 				cartMsg,
 				setCartMsg,
 				closeCartMsg,
+				cartItem,
+				changeBtn,
+				increase,
+				reduce,
 			}}
 		>
 			{children}

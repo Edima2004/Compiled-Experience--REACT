@@ -5,10 +5,11 @@ import { useGlobalContext } from "../context";
 
 const Menu = () => {
 	// eslint-disable-next-line no-unused-vars
-	const { menuItems, add_to_cart, remove_from_cart } = useGlobalContext();
+	const { menuItems, add_to_cart, remove_from_cart, changeBtn } =
+		useGlobalContext();
 	return (
 		<div>
-			<h1 className="head-menu">Our Menu</h1>
+			<h1 className="head-menu navbar-full">Our Menu</h1>
 			<Categories />
 
 			<div className="all-menu">
@@ -28,20 +29,21 @@ const Menu = () => {
 									</p>
 									<br />
 									<div className="cart_btns">
-										<button
-											className="add-cart menu-cart menu-cart1"
-											onClick={add_to_cart}
-										>
-											Add to cart
-										</button>
-
-										{/*Later Addition for deleting item in cart */}
-										{/*<button
-											className="add-cart menu-cart menu-cart2"
-											onClick={remove_from_cart }
-										>
-											Delete from cart
-										</button>*/}
+										 
+											<button
+												className="add-cart menu-cart menu-cart1"
+												onClick={() => add_to_cart(id, img, price, title)}
+											>
+												Add to cart
+											</button>
+										 {/*{changeBtn && (
+											<button 
+												className="add-cart menu-cart menu-cart2"
+												onClick={()=>remove_from_cart(id)}
+											>
+												Delete from cart
+											</button>
+										)}*/}
 									</div>
 								</div>
 							</section>

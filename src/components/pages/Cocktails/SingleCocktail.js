@@ -1,7 +1,7 @@
 import React from "react";
-import Loading from "../Loading";
+import Loading from "./Loading";
 import { useParams, Link } from "react-router-dom";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../../context";
 const url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 
 const SingleCocktail = () => {
@@ -18,8 +18,8 @@ const SingleCocktail = () => {
 				const data = await response.json();
 				if (data.drinks) {
 					const {
-						strDrink: name,
-						strDrinkThumb: image,
+						strDrink: title,
+						strDrinkThumb: img,
 						strAlcoholic: info,
 						strCategory: category,
 						strGlass: glass,
@@ -38,8 +38,8 @@ const SingleCocktail = () => {
 						strIngredient5,
 					];
 					const newCocktail = {
-						name,
-						image,
+						title,
+						img,
 						info,
 						category,
 						glass,
@@ -65,20 +65,21 @@ const SingleCocktail = () => {
 	if (!cocktail) {
 		return <h2 className="section-title">no cocktail to display</h2>;
 	}
-	const { name, image, info, category, glass, instructions, ingredients } =
+	const { title, img, info, category, glass, instructions, ingredients } =
 		cocktail;
+		const price = 15.99;
 	return (
-		<section className="section cocktail-section">
-			<Link to="/" className="btn btn-primary">
-				back home
+		<section className="section cocktail-section space-top">
+			<Link to="/cocktails" className="btn btn-primary">
+				back
 			</Link>
-			<h2 className="section-title">{name} </h2>
+			<h2 className="section-title">{title} </h2>
 			<div className="drink">
-				<img className="single-cock-img" src={image} alt={name} />
+				<img className="single-cock-img" src={img} alt={title} />
 				<div className="drink-info">
 					<p>
 						<span className="drink-data">name :</span>
-						{name}
+						{title}
 					</p>
 					<p>
 						<span className="drink-data">category :</span>
@@ -97,6 +98,9 @@ const SingleCocktail = () => {
 						{instructions}
 					</p>
 					<p>
+						<span className="drink-data">Price: </span>${price}
+					</p>
+					<p>
 						<span className="drink-data">ingredients :</span>
 						{ingredients.map((ingredient, index) => {
 							return ingredient ? <span key={index}>{ingredient}</span> : null;
@@ -104,7 +108,7 @@ const SingleCocktail = () => {
 					</p>
 					<button
 						className="add-cart menu-cart menu-cart1 cock-btn"
-						onClick={add_to_cart}
+						onClick={() => add_to_cart(id, img,  price, title,)}
 					>
 						Add to cart
 					</button>

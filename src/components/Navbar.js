@@ -22,7 +22,9 @@ const Navbar = () => {
 			<div className="all-cart">
 				<div>
 					<button className="cart">
-						<TiShoppingCart />
+						<a href="/CartItem">
+							<TiShoppingCart />
+						</a>
 					</button>
 				</div>
 

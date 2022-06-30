@@ -4,7 +4,7 @@ import SearchForm from "./SearchForm";
 
 const Compiled = () => {
 	return (
-		<div>
+		<div className="space-top">
 			<SearchForm />
 			<CompleteCocktail />
 		</div>

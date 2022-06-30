@@ -1,4 +1,4 @@
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../../context";
 import { FaTimes } from "react-icons/fa";
 
 const Cart = () => {

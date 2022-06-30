@@ -1,8 +1,8 @@
 import React from "react";
-import Footer from "../Footer";
-import HomeContent from "../HomeContent";
+import Footer from "./Home/Footer";
+import HomeContent from "./Home/HomeContent";
 
-import Slider from "./Slider";
+import Slider from "./Home/Slider";
 
 const FirstPage = () => {
 	return (

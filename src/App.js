@@ -6,9 +6,10 @@ import ErrorPage from "./components/pages/ErrorPage";
 import About from "./components/pages/About";
 import SideMenu from "./components/pages/SideMenu";
 import { useGlobalContext } from "./components/context";
-import CompiledTest from "./components/pages/CompiledCocktail";
-import SingleCocktail from "./components/pages/SingleCocktail";
-import Cart from "./components/pages/Cart";
+import CompiledTest from "./components/pages/Cocktails/CompiledCocktail";
+import SingleCocktail from "./components/pages/Cocktails/SingleCocktail";
+import Cart from "./components/pages/Cart/CartMsg";
+import CartItem from "./components/pages/Cart/CartItem";
 
 function App() {
 	const { openSideMenu, cartMsg } = useGlobalContext();
@@ -26,6 +27,7 @@ function App() {
 					<Route path="*" element={<ErrorPage />} />
 					<Route path="/cocktail/:id" element={<SingleCocktail />} />
 					<Route path="/Cart" element={<Cart />} />
+					<Route path="/CartItem" element={<CartItem />} />
 					<Route path="/About" element={<About />} />
 				</Routes>
 			</Router>

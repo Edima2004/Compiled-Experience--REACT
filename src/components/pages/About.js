@@ -1,10 +1,10 @@
 import React from "react";
-import Footer from "../Footer";
+import Footer from "./Home/Footer";
 
 const About = () => {
 	return (
 		<div>
-			<div className="about">
+			<div className="about space-top">
 				<h2>
 					<u>About Us</u>
 				</h2>

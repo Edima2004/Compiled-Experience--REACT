@@ -6,7 +6,7 @@ import { useGlobalContext } from "../context";
 const SideMenu = () => {
 	const { closeSMenu } = useGlobalContext();
 	return (
-		<div className="scroll-menu">
+		<div className="scroll-menu space-top">
 			<div className="sidemenu">
 				{NavData.map((sidebar) => {
 					const { id, name, link, icon } = sidebar;
