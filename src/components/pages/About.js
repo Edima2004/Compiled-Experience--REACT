@@ -21,7 +21,7 @@ const About = () => {
 					<p>
 						Well, I wouldn't want to bore you with the full details of what will
 						be done but generally, the random words in the <u>review section </u> will be replaced with{" "}
-						<u>meaningful text</u> and a backend will be created to reduce drag on the site <b>Jumia</b>
+						<u>meaningful text</u> and a backend will be created to reduce drag on the web app <b>Jumia</b>
 					</p>
 					<p>That being said, have a splendid user experience 😉😉</p>
 				</p>
