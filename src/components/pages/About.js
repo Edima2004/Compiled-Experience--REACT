@@ -14,16 +14,14 @@ const About = () => {
 					<p>
 						Hello dearest user 😊, a couple of clicks and scrolls must have
 						revealed, that while most of the site has been completely built,
-						only a few components are near to completion or not yet implemented.
-						Such as: the <b>cart component </b> the presence of{" "}
-						<b>random words</b> and <b>dark mode</b>.
+						only a few sections remain to be updated.
+						Majorly, the <b>review section </b> 
+						<b>dark mode</b> and <b>a tinny bit of backend implementation</b>.
 					</p>
 					<p>
 						Well, I wouldn't want to bore you with the full details of what will
-						be done but generally, the <u>random words</u> will be replaced with{" "}
-						<u>meaningful text</u> and the cart component will be fully built
-						having more functions enabling you to delete specific cart items,
-						and other functions in similar apps like <b>Jumia</b>
+						be done but generally, the random words in the <u>review section </u> will be replaced with{" "}
+						<u>meaningful text</u> and a backend will be created to reduce drag on the site <b>Jumia</b>
 					</p>
 					<p>That being said, have a splendid user experience 😉😉</p>
 				</p>

@@ -19,7 +19,7 @@ const CartItem = () => {
 	}
 
 	const handleToken = (token) => {
-		console.log({ token });
+		//console.log({ token });
 	};
 
 	return (

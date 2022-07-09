@@ -197,9 +197,10 @@ div .navbar {
 .cartmsg-success {
   color: #155724;
 }
-@media screen and (max-width:500px) {
+@media screen and (max-width:570px) {
   .cart-message{
-  width:70%
+  margin-left:10%;
+  width: 80%
   }
 }
 
@@ -1061,14 +1062,13 @@ Form
 /** Cart Item  */
 .cartI-all{
   margin: 0 auto;
-  width: 90%;
-  /*max-width: 1000px;*/
+  width: 100%;
+  max-width: 1000px;
 
 }
 .cartI {
   margin: 0 auto;
   display: flex;
-  margin-inline: 1rem;
   width: 90%;
   align-items: flex-start;
   margin-bottom: 2rem;
@@ -1083,6 +1083,7 @@ Form
   width: 100%;
   width: 10rem;
   height: 8rem;
+  border-radius: 5px;
 }
 
 .cartI-p {

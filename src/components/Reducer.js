@@ -16,7 +16,7 @@ const Reducer = (state, action) => {
 			...state,
 			icon: <BsExclamationLg />,
 			color: "danger",
-			message: "item is already in cart!",
+			message: "item is already in cart",
 			quantity: state.quantity - 1,
 		};
 	}
