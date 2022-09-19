@@ -1,10 +1,9 @@
 import React from "react";
 import { NavData, social } from "../data";
-import { FaTimes } from "react-icons/fa";
 import { useGlobalContext } from "../context";
 
 const SideMenu = () => {
-	const { closeSMenu } = useGlobalContext();
+	const { } = useGlobalContext();
 	return (
 		<div className="scroll-menu space-top">
 			<div className="sidemenu">
@@ -34,9 +33,6 @@ const SideMenu = () => {
 					);
 				})}
 			</div>
-			<button className="close-sidemenu" onClick={closeSMenu}>
-				<FaTimes />
-			</button>
 		</div>
 	);
 };

@@ -153,7 +153,7 @@ const AppProvider = ({ children }) => {
 	}, [searchTerm, fetchDrinks]);
 
 	//?Dark mode
-	const [darkMode, setDarkMode] = useState(false);
+	const [darkMode, setDarkMode] = useState();
 	const darkMd = () => {
 		setDarkMode(true);
 	};

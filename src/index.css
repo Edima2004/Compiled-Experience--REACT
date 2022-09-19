@@ -77,14 +77,13 @@ Global Styles
   padding: 0;
   box-sizing: border-box;
 }
-
-@font-face {
-  font-family: 'MyWebFont';
-  src: url('../src/Niconne-Regular-webfont.woff') format('woff')
+html{
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  /*font-family: Georgia, 'Times New Roman', Times, serif;*/
+  font-family: 'Gentium Book Plus', serif;
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -109,6 +108,8 @@ span {
 
 aside {
   color: var(--clr-primary-2);
+  /*color: #87152e;*/
+  /*color: #72ae10;*/
 }
 
 div .navbar {
@@ -118,11 +119,12 @@ div .navbar {
   padding: .5em .25em;
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-around;
   background-size: 1500px;
   padding-bottom: 1rem;
   background: #f7f7f7;
-  z-index: 1;
+  z-index: 999;
 }
 
 .navbar-full{
@@ -149,7 +151,7 @@ div .navbar {
 
 }
 
-@media screen and (max-width:609px) {
+@media screen and (max-width:679px) {
   .all-cart {
     padding-right: 70%;
   }
@@ -171,6 +173,7 @@ div .navbar {
 
 .trash {
   font-size: 1rem;
+  color: #bd0303;
 
 }
 
@@ -178,14 +181,13 @@ div .navbar {
   position: fixed;
   z-index: 1;
   width: 50%;
-  margin-top: 1rem;
   border-radius: 10px;
   padding: 1rem;
   font-size: 1.1rem;
   text-align: center;
   background-color: #f7f7f7;
   margin-left: 25%;
-    margin-top: 5rem;
+  margin-top: 5rem;
 
   box-shadow: var(--lightShadow2);
 }
@@ -205,20 +207,61 @@ div .navbar {
 }
 
 /** SideMenu */
-.fabars {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  background: transparent;
-  font-size: 2rem;
-  color: #1e9bff;
-  float: right;
+/* Hamburger Menu */
+.hamburger {
+  cursor: pointer;
+  display: block;
+  width: 24px;
+  height: 24px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition: all .25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 3px;
+  background: #1e9bff;
+  transform: rotate(0);
+  transition: all .5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90eg);
+  transform: translateY(0px);
 
 }
 
-.fabars:hover {
-  cursor: pointer;
-  color: var(--clr-primary-3)
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+@media (min-width: 680px) {
+  .hamburger{
+    display: none;
+  }
 }
 
 .close-sidemenu {
@@ -248,10 +291,12 @@ div .navbar {
   padding: .5rem;
   width: 100%;
   display: flex;
-  position: relative;
-  /*background: black;*/
+  position: fixed;
+  top: 0;
+  z-index:1;
   background: #f7f7f7;
 }
+
 
 .top-social {
   font-size: 1.5rem;
@@ -277,12 +322,11 @@ div .navbar {
   background: var(--clr-grey-9);
 }
 
-@media (min-width:610px) {
+@media (min-width:680px) {
   .nav-item {
     display: flex;
   }
 
-  .fabars,
   .sidemenu,
   .scroll-menu {
     display: none;
@@ -292,18 +336,18 @@ div .navbar {
 
 .dark-mode {
   /*width: 8%;*/
-  display: none;
   padding: 1rem;
   font-size: 1.5rem;
   float: right;
 }
 
 .home-title {
-  font-weight: bold;
-  font-size: 1.5rem;
-  padding: 1.5rem;
+  /*font-weight: bold;*/
+  padding: 1.5rem; 
   text-align: center;
-  font-family: 'MyWebFont';
+  font-family: 'Tangerine', serif;
+  text-shadow: 4px 4px 4px #aaa;
+  font-size: 40px;
 }
 
 @media screen and (min-width:1000px) {
@@ -333,13 +377,15 @@ div .navbar {
 }
 
 .first-home {
-  color: #476a2e;
+    color: #72ae10;
   /*background:#476a2e;*/
 }
 
 .second-home {
   background: #fff;
   color: #bd0303;
+  /*color: #87152e;
+    color: #72ae10;*/
 }
 
 .third-home {
@@ -356,6 +402,10 @@ div .navbar {
   flex-basis: 100%;
 }
 
+.marvel-logo{
+  /*width: 1.25rem;*/
+  max-width: 50%;
+}
 .img {
   max-width: 100%;
   box-shadow: var(--dark-shadow);
@@ -375,8 +425,10 @@ div .navbar {
 }
 
 .head-menu {
-  font-family: 'MyWebFont';
-  font-size: 2.5rem;
+  /*font-family: 'MyWebFont';*/
+  font-family: 'Tangerine', serif;
+  text-shadow: 4px 4px 4px #aaa;
+  font-size: 48px;
   text-align: center;
   padding-top: 6rem;
 }
@@ -447,7 +499,7 @@ div .navbar {
   max-width: 100%;
   font-weight: bold;
   text-transform: capitalize;
-
+  color: var(--clr-primary-5);
 }
 
 .menu-desc {
@@ -461,22 +513,6 @@ div .navbar {
   font-size: 1rem;
   font-weight: bold;
 }
-
-/*.single-menu {
-  margin: 0 auto;
-  width: 70%;
-  max-width: 400px;
-  text-transform: capitalize;
-  margin-top: 8rem;
-  line-height: 2rem;
-  font-size: 1rem;
-}
-
-.single-menu span {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: var(--clr-primary-4);
-}*/
 
 .add-cart {
   justify-content: center;
@@ -557,8 +593,10 @@ a {
 .error {
   width: 100%;
   margin: 0 auto;
+  position: relative;
+  top: 7rem;
   max-width: 400px;
-  margin-top: 2rem;
+  margin-top: 0rem;
   flex-direction: column;
   text-align: center;
   background: var(--clr-grey-8);
@@ -581,7 +619,7 @@ a {
 }
 
 .real-err-msg {
-  font-family: Arial, Helvetica, sans-serif;
+  /*font-family: Arial, Helvetica, sans-serif;*/
   margin-bottom: .5rem;
 }
 
@@ -661,10 +699,16 @@ button {
   text-align: center;
 
 }
+@media screen and (min-width:800px) {
+  .about{
+    text-align: start;
+  }
+}
 
 .about h2 {
-  font-family: 'MyWebFont';
-  font-size: 2rem;
+  font-family: 'Tangerine', serif;
+  text-shadow: 4px 4px 4px #aaa;
+  font-size: 48px;
   text-align: center;
   padding-top: 1rem;
 }
@@ -694,6 +738,7 @@ button {
   padding: .25rem;
   text-align: center;
   border-top: 1px solid black;
+  padding-top: 1rem;
   width: 100%;
 
 }
@@ -722,6 +767,7 @@ button {
 }
 
 /* slider */
+
 .quote {
   position: relative;
   top: 0;
@@ -778,6 +824,7 @@ article.prevSlide {
 article.nextSlide {
   transform: translateX(-100%);
 }
+
 
 @media screen and (max-width:600px) {
   article.activeSlide {
@@ -887,13 +934,15 @@ article.nextSlide {
 }
 
 .section-title {
-  font-family: 'MyWebFont';
-  font-size: 3rem;
+  font-family: 'Tangerine', serif;
+  text-shadow: 4px 4px 4px #aaa;
+  font-size: 55px;
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
   text-align: center;
   margin-bottom: 3.5rem;
-  margin-top: 1rem;
+  position: relative;
+  top: 1rem;
 }
 
 .cocktails-center {
@@ -1049,6 +1098,14 @@ Form
   .drink-info {
     padding-top: 0;
   }
+
+  .home-title,
+  .head-menu,
+  .about h2,
+  .section-title{
+    font-size: 50px;
+  }
+
 }
 
 @media screen and (max-width:500px) {
@@ -1133,6 +1190,7 @@ Form
 }
 /*? Dark mode */
 .dark-home {
-  /*color: #fff;*/
-  background: #000 !important;
+  color: #fff;
+  background: rgb(247, 247, 247) !important;
+  
 }

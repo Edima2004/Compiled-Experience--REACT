@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
+import { useGlobalContext } from "../../context";
 import { reviews } from "../../data";
 
 const Slider = () => {
+	const { openSideMenu } = useGlobalContext()
+
 	const [index, setIndex] = useState(0);
 	// eslint-disable-next-line no-unused-vars
 	const [people, setPeople] = useState(reviews[index]);
@@ -41,7 +44,7 @@ const Slider = () => {
 	}, [index]);
 
 	return (
-		<section className="review-section">
+		<section className={`review-section ${openSideMenu && 'zindex'}`}>
 			{reviews.map((person, personIndex) => {
 				const { id, name, image, text } = person;
 

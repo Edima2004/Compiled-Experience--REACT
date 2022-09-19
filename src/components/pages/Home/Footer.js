@@ -21,6 +21,7 @@ const Footer = () => {
 				For more information please send a mail to edimavthompson@gmail.com or
 				call +234 7012708221
 			</p>
+			<p className="footer-p"> &copy; Copyright 2022, All Rights Reserved</p>
 		</div>
 	);
 };
