@@ -17,11 +17,6 @@ const CartItem = () => {
 	if (cart.length === 0) {
 		return <h2 className="section-title space-top">Cart Empty!</h2>;
 	}
-
-	const handleToken = (token) => {
-		//console.log({ token });
-	};
-
 	return (
 		<div className="cartI-all space-top">
 			{cart.map((item) => {

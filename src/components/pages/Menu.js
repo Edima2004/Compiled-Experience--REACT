@@ -1,11 +1,10 @@
 import React from "react";
 import Categories from "../Categories";
 import { useGlobalContext } from "../context";
-//import { Link } from "react-router-dom";
 
 const Menu = () => {
 	// eslint-disable-next-line no-unused-vars
-	const { menuItems, add_to_cart, remove_from_cart, changeBtn } =
+	const { menuItems, add_to_cart } =
 		useGlobalContext();
 	return (
 		<div>

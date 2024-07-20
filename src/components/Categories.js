@@ -2,7 +2,7 @@ import React from "react";
 import { useGlobalContext } from "./context";
 
 const Categories = () => {
-	const { filterItems, categories } = useGlobalContext();
+	const { filterItems, categories} = useGlobalContext();
 
 	return (
 		<div className="top-menu">

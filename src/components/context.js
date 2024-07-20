@@ -17,7 +17,7 @@ const getLocalStorage = () => {
 	if (list) {
 		return JSON.parse(localStorage.getItem("quantity"));
 	} else {
-		return [];
+		return [];//! null
 	}
 };
 //?json server 2 cart
@@ -37,7 +37,7 @@ const AppProvider = ({ children }) => {
 	//?CartMsg--UseReducer
 	const initialState = {
 		cart: cartItem,
-		quantity: getLocalStorage(),
+		quantity: getLocalStorage() || 0,//! possible bug
 		message: "",
 		icon: "",
 		color: "",
@@ -69,8 +69,6 @@ const AppProvider = ({ children }) => {
 		dispatch({ type: "CLEAR_ALL" });
 	};
 	const remove_from_cart = (id) => {
-		//const newItem= cartItem.map((item) => item.id !== id);
-		// setCartItem(newItem)
 		dispatch({ type: "DELETE_ITEM", payload: id, });
 	};
 	const increase = (id, price) => {
@@ -143,7 +141,6 @@ const AppProvider = ({ children }) => {
 			}
 			setLoading(false);
 		} catch (error) {
-			//console.log("error");
 			setLoading(false);
 		}
 	}, [searchTerm]);

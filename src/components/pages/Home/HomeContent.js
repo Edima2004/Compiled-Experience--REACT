@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BsToggleOn, BsToggleOff } from 'react-icons/bs';
+//import { BsToggleOn, BsToggleOff } from 'react-icons/bs';
 import { useGlobalContext } from '../../context';
 
 const HomeContent = () => {
 	const { darkMode, changeMode } = useGlobalContext();
 	return (
 		<div className="home space-top">
-			<div className="dark-mode" onClick={changeMode}>
+			{/*<div className="dark-mode" onClick={changeMode}>*/}
 				{/*{darkMode ? <BsToggleOn /> : <BsToggleOff />}*/}
-			</div>
+			{/*</div>*/}
 			<div className={`${darkMode ? 'home-title dark-home ' : 'home-title'}`}>
 				<h1>
 					<em>Welcome to Marvel's Kitchen</em>

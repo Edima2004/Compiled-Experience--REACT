@@ -17,7 +17,7 @@ const About = () => {
 						revealed, that while most of the site has been fully built,
 						only a few sections remain to be updated.
 						<p>
-							Majorly, the <b>review section</b>,
+							Majorly,the <b>review section</b>,
 							<b> dark mode</b> and <b>a tiny bit of backend implementation</b>.
 						</p>
 					</p>

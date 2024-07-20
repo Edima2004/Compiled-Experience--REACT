@@ -3,7 +3,6 @@ import { NavData, social } from "../data";
 import { useGlobalContext } from "../context";
 
 const SideMenu = () => {
-	const { } = useGlobalContext();
 	return (
 		<div className="scroll-menu space-top">
 			<div className="sidemenu">
