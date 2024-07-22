@@ -37,7 +37,7 @@ const AppProvider = ({ children }) => {
 	//?CartMsg--UseReducer
 	const initialState = {
 		cart: cartItem,
-		quantity: Number(getLocalStorage()),
+		quantity: getLocalStorage(),
 		message: "",
 		icon: "",
 		color: "",
